@@ -6,3 +6,19 @@ img {
 .sideImg {
     width: 100px;
 }
+
+.corazon {
+    width: 40px;
+}
+
+.main {
+    border: solid grey 2px;
+    width: fit-content;
+    padding: 20px;
+    display: flex;
+}
+
+.btn {
+    border: black 2px solid;
+    margin: 10px;
+}

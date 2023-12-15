@@ -1,7 +1,7 @@
 <h2>Minions:</h2>
 <ul>
     <li *ngFor="let minion of minions;">
-        <h3>Name: {{minion.name}} </h3><br>
+        <h3>Name: {{minion.name}} <img src="../../assets/img/Heart_corazón.svg.png" alt="corazon" class="corazon" (click)="addToFavourites(minion)"></h3><br>
         <img src={{minion.img}} alt="{{minion.name}}"> <br>
         <b>Bio: </b>{{minion.bio}} <br>
         <b>Birth: </b>{{minion.birth}} <br>

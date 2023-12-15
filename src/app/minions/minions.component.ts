@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {Minion} from '../Interfaces/minion';
+import { Minion } from '../Interfaces/minion';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -67,4 +67,14 @@ export class MinionsComponent {
         side: "malvado"
       }
   ]
+  favourites: Minion[] = [
+  ]
+  addToFavourites(minion:Minion) {
+    if (this.favourites.indexOf(minion) != -1) {//comprueba si esta
+      this.favourites.filter(minionS => minionS != minion)
+    }
+    else {//si no esta
+
+    }
+  }
 }
