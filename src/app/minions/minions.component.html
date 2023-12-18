@@ -1,16 +1,25 @@
-<h2>Minions:</h2>
+<h1>Minions</h1>
 <ul>
-    <li *ngFor="let minion of minions;">
-        <h3>Name: {{minion.name}} <img src="../../assets/img/Heart_corazón.svg.png" alt="corazon" class="corazon" (click)="addToFavourites(minion)"></h3><br>
-        <img src={{minion.img}} alt="{{minion.name}}"> <br>
-        <b>Bio: </b>{{minion.bio}} <br>
-        <b>Birth: </b>{{minion.birth}} <br>
-        <div *ngIf="minion.side == 'de los buenos'; else malo">
-            <img src="../../assets/img/de los buenos.PNG" alt="Bueno" class="sideImg">
+    <li *ngFor="let minion of minions;"><h2>{{minion.name}}:</h2> 
+        <b>bio:</b> {{minion.bio}} 
+        <br> <b>birth:</b> {{minion.birth}} 
+        <br><img src="{{minion.img}}" alt="{{minion.name}}" width="200px"> 
+        <br> <b>side:</b> {{minion.side}}
+        <div *ngIf="minion.side=='de los buenos'; else malo">
+            <img src="assets/img/de los buenos.PNG" width="50px">
         </div>
         <ng-template #malo>
-            <img src="../../assets/img/de los malos.PNG" alt="Malvado" class="sideImg"> <br>
+            <div>
+                <img src="assets/img/de los malos.PNG" width="50px">
+            </div>
         </ng-template>
-        <b>Side :</b>{{minion.side}} <br>
+        <div *ngIf="isInFavorites(minion); else vacio">
+          <img (click)="favorite(minion)" class="noRadius" src="assets/img/Heart_corazón.svg.png" width="50px">
+        </div>
+        <ng-template #vacio>
+          <div>
+              <img (click)="favorite(minion)" class="noRadius" src="assets/img/corazon_vacio.png" width="50px">
+          </div>
+      </ng-template>
     </li>
 </ul>
