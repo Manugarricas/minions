@@ -22,3 +22,7 @@ img {
     border: black 2px solid;
     margin: 10px;
 }
+
+li {
+    list-style: none;
+}
