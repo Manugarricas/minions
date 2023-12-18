@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Minion } from '../Interfaces/minion';
 import { CommonModule } from '@angular/common';
 
@@ -81,4 +81,8 @@ favorites : Minion[] = [
   isInFavorites(minion : Minion){
     return this.favorites.indexOf(minion)!=-1;
   }
+
+  @Input() minionName:string = "";
+  
+
 }

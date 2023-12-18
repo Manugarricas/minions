@@ -20,4 +20,9 @@ export class AppComponent {
     console.log(value);
     this.currentCounter = value;
   }
+  minionName = '';
+  recogerValor(value: string) {
+    this.minionName = value;
+  }
+
 }

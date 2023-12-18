@@ -1,7 +1,11 @@
-<!--<app-inline></app-inline>-->
-<!--<app-minion></app-minion>-->
+<app-inline (emiter)="recogerValor($event)"></app-inline>
+<app-minion [minionName]="minionName"></app-minion>
+
+
+
+
 <!--Botoncicos tope wapos y los valores que reciben de los-->
-<app-contador [increment]="increment" (counterChange)="updateCounter($event)"></app-contador>
+<!--<app-contador [increment]="increment" (counterChange)="updateCounter($event)"></app-contador>
 <label for="increment">Increment: </label>
 <input [(ngModel)]='increment' type="number" id="increment" name="increment" value="{{increment}}">
-<p>Valor actual: {{currentCounter}}</p>
+<p>Valor actual: {{currentCounter}}</p>-->

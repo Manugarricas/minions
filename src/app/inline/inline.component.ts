@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { Minion } from '../Interfaces/minion';
 
 @Component({
   selector: 'app-inline',
@@ -7,5 +8,9 @@ import { Component } from '@angular/core';
   templateUrl: './inline.component.html'
 })
 export class InlineComponent {
-
+  minionName: string = "";
+  @Output() emiter : EventEmitter<string> = new EventEmitter<string>();
+  search(valor: string) {
+    this.emiter.emit(valor);
+  }
 }
