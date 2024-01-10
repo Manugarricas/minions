@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { Minion } from '../Interfaces/minion';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-inline',
@@ -8,9 +8,13 @@ import { Minion } from '../Interfaces/minion';
   templateUrl: './inline.component.html'
 })
 export class InlineComponent {
-  minionName: string = "";
-  @Output() emiter : EventEmitter<string> = new EventEmitter<string>();
+
+  constructor(private router:Router) {}
+  
   search(valor: string) {
-    this.emiter.emit(valor);
+    this.router.navigateByUrl('/RefreshComponent', {skipLocationChange: true}).then(() => {
+      this.router.navigate(['/minions/'+valor]);
+    })
   }
+
 }
