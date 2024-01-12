@@ -13,7 +13,7 @@ import { RouterOutlet } from '@angular/router';
 })
 export class MinionComponent implements OnInit {
 
-  @Input() minions: Minion[] = [];
+  minions: Minion[] = [];
 
   favorites: Minion[] = [];
 
@@ -33,7 +33,13 @@ export class MinionComponent implements OnInit {
   constructor(private minionsService: MinionService) { };
 
   ngOnInit(): void {
-    this.minions = this.minionsService.getFilterMinions(this.searchTerm);
+    this.minionsService.getMinions().subscribe({
+      next: (minions) => {
+        minions.forEach(minion => {
+          this.minions.push(minion)
+        })
+      }
+    })
   }
 
 }

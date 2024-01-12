@@ -11,14 +11,16 @@ import { CommonModule } from '@angular/common';
 })
 export class DetailsComponent {
 
-  @Input() minionName:string = '';
+  @Input() minionId:string = '';
 
   minion:Minion[] = [];
 
   constructor(private minionService: MinionService) {}
 
   ngOnInit(): void {
-    this.minion = this.minionService.getFilterMinions(this.minionName);
+    this.minionService.getOneMinion(this.minionId).subscribe({
+      next: (minion) => this.minion.push(minion)
+    })
   }
 
 }
