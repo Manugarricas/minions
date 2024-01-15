@@ -1,8 +1,8 @@
-<h1>Details of: {{minion[0].name}}</h1>
-<p>Bio: {{minion[0].bio}}</p>
-<p>Birth: {{minion[0].birth}}</p>
-<img src="{{minion[0].img}}"> <br>
-<div *ngIf="minion[0].side == 'de los buenos'; else malo">
+<h1>Details of: {{minion.name}}</h1>
+<p>Bio: {{minion.bio}}</p>
+<p>Birth: {{minion.birth}}</p>
+<img src="{{minion.img}}"> <br>
+<div *ngIf="minion.side == 'de los buenos'; else malo">
     <img src="assets/img/de los buenos.PNG" style="width: 100px;">
 </div>
 <ng-template #malo>

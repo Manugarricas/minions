@@ -41,5 +41,4 @@ export class MinionComponent implements OnInit {
       }
     })
   }
-
 }

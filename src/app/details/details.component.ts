@@ -13,13 +13,13 @@ export class DetailsComponent {
 
   @Input() minionId:string = '';
 
-  minion:Minion[] = [];
+  minion!:Minion;
 
   constructor(private minionService: MinionService) {}
 
   ngOnInit(): void {
     this.minionService.getOneMinion(this.minionId).subscribe({
-      next: (minion) => this.minion.push(minion)
+      next: (minion) => this.minion = minion
     })
   }
 
